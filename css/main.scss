@@ -1,0 +1,99 @@
+@import "./reset.scss";
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-9');
+header{
+    position: fixed;
+    z-index: 11;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    pointer-events: none;
+}
+main{
+    .ui_left{
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 30;
+    }
+    .ui_right{
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 30;
+    }
+    .wrap_background{
+        height:100vh;
+
+        .background{
+            display:flex;width:100%;height:100%;overflow: hidden;background: black;
+
+            .left_section{
+                width:50%;
+                height:100%;
+                background: black;
+                clip-path:ellipse(20% 30% at 50% 50%);
+                transition:all .5s ease-in-out;
+
+                img{
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+                &.left_over{clip-path:ellipse(100% 100%);}
+            }
+            .right_section{
+                width:50%;height:100%;
+                clip-path:ellipse(100% 100%);
+                transition:all .5s ease-in-out;
+
+                video{width:100%;height:100%;object-fit: cover;}
+                &.right_leave{clip-path:ellipse(20% 30% at 50% 50%)}
+            }
+        }
+        .svg_box{
+            svg{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                path{
+                    fill:#fff;
+                    stroke-width: 7;
+                    stroke-dasharray: var(--length);
+                    stroke-dashoffset: var(--length);
+                    animation:path 1s forwards;
+                }
+            }
+            // position:absolute;top:0;left:0;right:0;bottom:0;
+            // svg{    
+            //     position: absolute;
+            //     left: 50%;
+            //     top: 50%;
+            //     transform: translate(-50%,-50%);
+            //     text{
+            //         fill:#fff;
+            //         text-anchor: middle;
+            //         dominant-baseline: middle;
+            //         animation: stroke 3s linear;
+            //         font-size: 12vw;
+            //         font-family: 'Helvetica Neue', sans-serif;
+            //         font-weight: bold;
+            //     }
+            // }
+        }
+    }
+}
+
+@keyframes stroke {
+    // 0%{
+
+    // }
+    100% {
+        stroke-dashoffset: 0;
+    }
+    
+}
