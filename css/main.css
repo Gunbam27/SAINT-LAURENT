@@ -25,6 +25,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+  font-family: "Helvetica Neue", sans-serif;
   line-height: 1;
 }
 
@@ -96,22 +97,37 @@ main .wrap_background .background .right_section video {
 main .wrap_background .background .right_section.right_leave {
   clip-path: ellipse(20% 30% at 50% 50%);
 }
-main .wrap_background .svg_box svg {
+main .wrap_background .svg_box {
+  display: inline;
+  width: 100%;
   position: absolute;
-  left: 50%;
+  text-align: center;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
 }
-main .wrap_background .svg_box svg path {
-  fill: #fff;
-  stroke-width: 7;
-  stroke-dasharray: var(--length);
-  stroke-dashoffset: var(--length);
-  animation: path 1s forwards;
+main .wrap_background .svg_box h2 {
+  color: transparent;
+  font-size: 6rem;
+  background-repeat: repeat-x;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  background-image: url("./../img/bg_3.png");
+  animation: fillUp 3s forwards;
+}
+main .wrap_desc {
+  width: 100%;
+  height: 100vh;
 }
 
-@keyframes stroke {
-  100% {
-    stroke-dashoffset: 0;
+@keyframes fillUp {
+  0% {
+    background-size: 100% 0%;
   }
+  100% {
+    background-size: 100% 125%;
+  }
+}
+.is-visible {
+  opacity: 1;
 }
