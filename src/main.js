@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollTrigger);
+
 
 const UI_left = document.querySelector('.ui_left');
 const svg_left = document.querySelector('.left_section');
@@ -14,26 +14,15 @@ UI_left.addEventListener('mouseleave',()=>{
     svg_right.classList.remove('right_leave')
 })
 
-const elm = document.querySelectorAll('section');
-const elmCount = elm.length;
-console.log(elmCount);
-const wrap_background = document.querySelector('.wrap_background')
-window.addEventListener("load", ()=> {
-    elm.forEach(function (item,index){
-        item.addEventListener('wheel',(e)=>{
-            e.preventDefault();
-            let delta = 0;
-            let moveTop = window.scrollY;
-            let elmSelector = elm[index];
+// new Pageable("main");
+const sectionFirst = document.querySelector('.wrap_background')
+const sectionHeight = sectionFirst.offsetHeight;
 
-            if(delta<0){
-                if(elmSelector !== elmCount-1){
-                    moveTop = window.pageYOffset + elmSelector.nextElementSibling.getBoundingClientRect().top;
-                }
-            }
-            const body = document.querySelector('html');
-            window.scrollTo({top:moveTop, left:0, behavior:'smooth'});
-        })
-    })
-});
-    
+window.addEventListener("wheel", (e) =>{
+    console.log(window.pageYOffset)
+    if(e.deltaY>0){window.scrollTo({top:sectionHeight,left:0,behavior:'smooth'})}
+    if(e.deltaY<0){window.scrollTo({top:-(sectionHeight),left:0,behavior:'smooth'})}
+})
+console.log(sectionHeight);
+
+

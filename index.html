@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <header class="header">
+    <!-- <header class="header">
         <h1>SAINT LAURENT</h1>
-    </header>
+    </header> -->
     <main>
         <div class="ui_left"></div>
         <div class="ui_right"></div>
-        <section class="wrap_background">
+        <section class="wrap_background" data-anchor="Page 1">
             <div class="background">
                 <div class="left_section">
                     <img src="./img/bg_1.jpg" alt="SAINT LAURENT HOUSE"/>
@@ -35,11 +35,10 @@
                 <h2>SAINT LAURENT</h2>
             </div>
         </section>
-        <section class="wrap_desc">
-            start
+        <section class="wrap_desc" data-anchor="Page 2">
+            <div></div>
         </section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://unpkg.com/pageable@latest/dist/pageable.min.js"></script>
         <script src="./src/main.js"></script>
     </main>
 </body>

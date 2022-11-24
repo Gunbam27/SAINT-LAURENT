@@ -33,15 +33,6 @@ ol, ul {
   list-style: none;
 }
 
-header {
-  position: fixed;
-  z-index: 11;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  pointer-events: none;
-}
-
 main .ui_left {
   width: 50%;
   height: 100%;
@@ -60,6 +51,7 @@ main .ui_right {
 }
 main .wrap_background {
   height: 100vh;
+  position: relative;
 }
 main .wrap_background .background {
   display: flex;
@@ -118,6 +110,7 @@ main .wrap_background .svg_box h2 {
 main .wrap_desc {
   width: 100%;
   height: 100vh;
+  background: #CA9985;
 }
 
 @keyframes fillUp {
