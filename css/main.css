@@ -63,33 +63,33 @@ main .wrap_first .background {
   overflow: hidden;
   background: black;
 }
-main .wrap_first .background .left_section {
+main .wrap_first .background .first_left {
   width: 50%;
   height: 100%;
   background: black;
   clip-path: ellipse(20% 30% at 50% 50%);
   transition: all 0.5s ease-in-out;
 }
-main .wrap_first .background .left_section img {
+main .wrap_first .background .first_left img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
-main .wrap_first .background .left_section.left_over {
+main .wrap_first .background .first_left.left_over {
   clip-path: ellipse(100% 100%);
 }
-main .wrap_first .background .right_section {
+main .wrap_first .background .first_right {
   width: 50%;
   height: 100%;
   clip-path: ellipse(100% 100%);
   transition: all 0.5s ease-in-out;
 }
-main .wrap_first .background .right_section video {
+main .wrap_first .background .first_right video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-main .wrap_first .background .right_section.right_leave {
+main .wrap_first .background .first_right.right_leave {
   clip-path: ellipse(20% 30% at 50% 50%);
 }
 main .wrap_first .svg_box {
@@ -125,7 +125,115 @@ main .wrap_secon .container p {
 }
 main .wrap_third {
   overflow: hidden;
-  background: #CA9985 url(../img/img_2.jpg) no-repeat center center/contain;
+  display: flex;
+  align-items: center;
+  padding: 300px 0;
+  background-color: black;
+  color: white;
+  transform: rotate(0deg);
+}
+main .wrap_third .third_left {
+  width: 60%;
+  z-index: 20;
+}
+main .wrap_third .third_left img {
+  width: 62.5rem;
+  padding-top: 116px;
+}
+main .wrap_third .third_right {
+  width: 38.125rem;
+}
+main .wrap_third .third_right .third_tit {
+  padding-bottom: 40px;
+  font-size: 3.125rem;
+}
+main .wrap_third .third_right .third_txt {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+main .wrap_third .third_line {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+}
+main .wrap_third .third_line .cover {
+  width: 100vw;
+  margin-bottom: 10rem;
+  display: flex;
+}
+main .wrap_third .third_line .cover:nth-child(1) {
+  margin-top: 5vh;
+  transform: rotate(-5deg) translateX(-9px);
+  background-color: gainsboro;
+}
+main .wrap_third .third_line .cover:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  transform: rotate(6deg) translateX(-15px);
+  background-color: #424242;
+  justify-content: flex-end;
+}
+main .wrap_third .third_line .cover p {
+  display: flex;
+  padding: 3rem 0;
+  font-size: 5rem;
+}
+main .wrap_fourth {
+  display: flex;
+  justify-content: center;
+  height: 170vh;
+  background-color: black;
+}
+main .wrap_fourth .fourth_left, main .wrap_fourth .fourth_right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 24.43rem;
+  height: 100%;
+  flex: 1;
+}
+main .wrap_fourth .fourth_left img:first-child, main .wrap_fourth .fourth_right img:first-child {
+  width: 22.5rem;
+  padding-top: 16rem;
+}
+main .wrap_fourth .fourth_left img:nth-child(2), main .wrap_fourth .fourth_right img:nth-child(2) {
+  width: 24.5rem;
+  padding-top: 12rem;
+}
+main .wrap_fourth .fourth_left img:first-child {
+  padding-top: 0rem;
+}
+main .wrap_fourth .fourth_left img:nth-child(2) {
+  padding-top: 16rem;
+}
+main .wrap_fourth .fourth_center {
+  font-size: 3.75rem;
+  color: white;
+  line-height: 1.6;
+}
+main .wrap_fourth .fourth_center .container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+main .wrap_fourth .fourth_center .container p {
+  width: 42rem;
+  padding-bottom: 7.5rem;
+}
+
+footer {
+  background-color: black;
+  color: white;
+}
+footer .container {
+  max-width: 67.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 15px 0;
 }
 
 @keyframes fillUp {
