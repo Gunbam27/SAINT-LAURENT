@@ -23,7 +23,6 @@ let tlMain = gsap.timeline({
         trigger:".wrap_secon",
         start:"center center",
         end:"bottom top",
-        markers:true,
         pin:true,
         scrub:0.9,
     }
@@ -38,7 +37,6 @@ gsap.timeline({
         trigger:".wrap_third",
         start:"top 80%",
         end:"bottom -80%",
-        markers:true,
         scrub:1,
         // containerAnimation:tlMain,
     }
@@ -53,7 +51,6 @@ gsap.timeline({
         trigger:".wrap_fourth",
         start:"top 100%",
         end:"bottom bottom",
-        markers:true,
         scrub:0.8,
         // containerAnimation:tlMain,
     }
