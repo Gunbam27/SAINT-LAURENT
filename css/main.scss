@@ -140,10 +140,10 @@ main{
             height:100%;
             top:0;
             .cover{
-                width:200vw;
+                width:100vw;
                 margin-bottom:10rem;
                 display:flex;
-
+                overflow: hidden;
                 &:nth-child(1){
                     margin-top:5vh;
                     transform: rotate(-5deg)translateX(-9px);
@@ -282,6 +282,10 @@ main{
 
                     .fourth_center{
                         font-size: 36px;
+                        
+                        .container{
+                            p{width:350px;}
+                        }
                     }
                 }
             }

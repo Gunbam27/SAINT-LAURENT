@@ -181,9 +181,10 @@ main .wrap_third .third_line {
   top: 0;
 }
 main .wrap_third .third_line .cover {
-  width: 200vw;
+  width: 100vw;
   margin-bottom: 10rem;
   display: flex;
+  overflow: hidden;
 }
 main .wrap_third .third_line .cover:nth-child(1) {
   margin-top: 5vh;
@@ -314,6 +315,9 @@ main .wrap_fourth .fourth_center .container p {
   }
   main .wrap_fourth .fourth_center {
     font-size: 36px;
+  }
+  main .wrap_fourth .fourth_center .container p {
+    width: 350px;
   }
 }
 
