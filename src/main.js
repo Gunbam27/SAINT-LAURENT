@@ -18,29 +18,133 @@ UI_left.addEventListener('mouseleave',()=>{
 
 gsap.registerPlugin(ScrollTrigger);
 
-let tlMain = gsap.timeline({
-    scrollTrigger:{
-        trigger:".wrap_secon",
-        start:"center center",
-        end:"bottom top",
-        markers:true,
-        pin:true,
-        scrub:0.9,
+// let tlMain = gsap.timeline({
+//     scrollTrigger:{
+//         trigger:".wrap_secon",
+//         start:"center center",
+//         end:"bottom top",
+//         pin:"true",
+//         scrub:0.9,
+//     }
+// })
+// .from(".txt1",{x:innerWidth * 1})
+// .from(".txt2",{x:innerWidth * -1})
+// .from(".txt3",{x:innerWidth * 1})
+// .from(".txt4",{x:innerWidth * -1});
+// let tlMain = gsap.timeline({
+//     scrollTrigger:{
+//         trigger:".wrap_secon",
+//         start:"center center",
+//         end:"bottom top",
+//         pin:".wrap_secon",
+//         scrub:0.9,
+//     }
+// })
+
+// gsap.timeline({
+//     scrollTrigger:{
+//         trigger:".wrap_secon .container",
+//         start:"center center",
+//         end:"bottom top",
+//         scrub:0.9,
+//     }
+// })
+// .from(".txt1",{x:innerWidth * 1})
+// .from(".txt2",{x:innerWidth * -1})
+// .from(".txt3",{x:innerWidth * 1})
+// .from(".txt4",{x:innerWidth * -1});
+function initDesktop() {
+    gsap.timeline({
+        scrollTrigger:{
+            trigger:".wrap_secon",
+            start:"center center",
+            end:"bottom top",
+            pin:".wrap_secon",
+            scrub:0.9,
+        }
+    })
+    gsap.timeline({
+        scrollTrigger:{
+            trigger:".wrap_secon .container",
+            start:"center center",
+            end:"bottom top",
+            scrub:0.9,
+        }
+    })
+    .from(".txt1",{x:innerWidth * 1})
+    .from(".txt2",{x:innerWidth * -1})
+    .from(".txt3",{x:innerWidth * 1})
+    .from(".txt4",{x:innerWidth * -1});
+}
+
+function initMobile() {
+    gsap.timeline({
+        scrollTrigger:{
+            trigger:".wrap_secon",
+            start:"center center",
+            end:"bottom top",
+            pin:false,
+            scrub:0.9,
+        }
+    })
+    // gsap.timeline({
+    //     scrollTrigger:{
+    //         trigger:".wrap_secon .container",
+    //         start:"center center",
+    //         end:"bottom top",
+    //         scrub:0.9,
+    //     }
+    // })
+    // .from(".txt1",{x:innerWidth * 1})
+    // .from(".txt2",{x:innerWidth * -1})
+    // .from(".txt3",{x:innerWidth * 1})
+    // .from(".txt4",{x:innerWidth * -1});
     }
-})
-.from(".txt1",{x:innerWidth * 1})
-.from(".txt2",{x:innerWidth * -1})
-.from(".txt3",{x:innerWidth * 1})
-.from(".txt4",{x:innerWidth * -1});
+    ScrollTrigger.matchMedia({
+    // desktop
+    "(min-width: 361px)": initDesktop,
+        // setup animations and ScrollTriggers for screens over 800px wide (desktop) here...
+        // ScrollTriggers will be reverted/killed when the media query doesn't match anymore.
+        
+    
+    // mobile
+    "(max-width: 360px)": initMobile,
+        // The ScrollTriggers created inside these functions are segregated and get
+        // reverted/killed when the media query doesn't match anymore. 
+    
+    
+    // all 
+    "all": function() {
+        // ScrollTriggers created here aren't associated with a particular media query,
+        // so they persist.
+    }
+    });
+// gsap.timeline({
+//     scrollTrigger:{
+//         trigger:".wrap_secon .container",
+//         start:"center center",
+//         end:"bottom top",
+//         scrub:0.9,
+//     }
+// })
+// .from(".txt1",{x:innerWidth * 1})
+// .from(".txt2",{x:innerWidth * -1})
+// .from(".txt3",{x:innerWidth * 1})
+// .from(".txt4",{x:innerWidth * -1});
+
+
+
+
+
+
+
 
 gsap.timeline({
     scrollTrigger:{
         trigger:".wrap_third",
         start:"top 80%",
         end:"bottom -80%",
-        markers:true,
         scrub:1,
-        // containerAnimation:tlMain,
     }
 })
 .to(".img3",{
@@ -53,9 +157,7 @@ gsap.timeline({
         trigger:".wrap_fourth",
         start:"top 100%",
         end:"bottom bottom",
-        markers:true,
         scrub:0.8,
-        // containerAnimation:tlMain,
     }
 })
 .from(".img4",{y:600,scale:0.8})

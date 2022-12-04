@@ -1,4 +1,5 @@
-@import url("https://fonts.cdnfonts.com/css/helvetica-neue-9");
+@charset "UTF-8";
+@import url("https://fonts.cdnfonts.com/css/arial");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,7 +17,6 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 
@@ -25,7 +25,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Arial Black", sans-serif;
   line-height: 1;
 }
 
@@ -33,9 +33,12 @@ ol, ul {
   list-style: none;
 }
 
+/*반응형 화면 크기*/
+/*반응형 화면 크기*/
 main section {
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 main .ui_left {
   width: 50%;
@@ -110,18 +113,38 @@ main .wrap_first .svg_box h2 {
   background-image: url("./../img/bg_3.png");
   animation: fillUp 3s forwards;
 }
+@media all and (max-width: 360px) {
+  main .wrap_first .background {
+    flex-direction: column;
+  }
+  main .wrap_first .background .first_left {
+    width: 100%;
+  }
+  main .wrap_first .background .first_right {
+    width: 100%;
+  }
+}
 main .wrap_secon {
   display: flex;
   justify-content: center;
   background: #000 url("./../img/img_1.jpg") no-repeat center center;
   color: white;
-  overflow-x: hidden;
 }
 main .wrap_secon .container {
   padding-left: 20%;
 }
 main .wrap_secon .container p {
   font-size: 5.625rem;
+}
+@media all and (max-width: 768px) {
+  main .wrap_secon .container p {
+    font-size: 4.75rem;
+  }
+}
+@media all and (max-width: 768px) and (max-width: 360px) {
+  main .wrap_secon .container p {
+    font-size: 3.35rem;
+  }
 }
 main .wrap_third {
   overflow: hidden;
@@ -158,7 +181,7 @@ main .wrap_third .third_line {
   top: 0;
 }
 main .wrap_third .third_line .cover {
-  width: 100vw;
+  width: 200vw;
   margin-bottom: 10rem;
   display: flex;
 }
@@ -178,6 +201,51 @@ main .wrap_third .third_line .cover p {
   display: flex;
   padding: 3rem 0;
   font-size: 5rem;
+}
+@media all and (max-width: 1024px) {
+  main .wrap_third {
+    position: relative;
+  }
+  main .wrap_third .third_left {
+    position: absolute;
+    left: -55%;
+  }
+  main .wrap_third .third_right {
+    position: absolute;
+    right: 0;
+    z-index: 5;
+  }
+}
+@media all and (max-width: 1024px) and (max-width: 768px) {
+  main .wrap_third {
+    flex-direction: column;
+    height: 110vh;
+  }
+  main .wrap_third .third_left {
+    bottom: 0;
+    left: 65%;
+  }
+  main .wrap_third .third_left img {
+    width: 37.5rem;
+  }
+  main .wrap_third .third_line .cover:nth-child(2) {
+    bottom: 10%;
+  }
+}
+@media all and (max-width: 1024px) and (max-width: 768px) and (max-width: 360px) {
+  main .wrap_third {
+    right: 2%;
+  }
+  main .wrap_third .third_right {
+    width: 350px;
+    right: -2%;
+  }
+  main .wrap_third .third_right .third_tit {
+    font-size: 36px;
+  }
+  main .wrap_third .third_right .third_txt {
+    font-size: 18px;
+  }
 }
 main .wrap_fourth {
   display: flex;
@@ -223,6 +291,31 @@ main .wrap_fourth .fourth_center .container p {
   width: 42rem;
   padding-bottom: 7.5rem;
 }
+@media all and (max-width: 1024px) {
+  main .wrap_fourth .fourth_center {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  main .wrap_fourth .fourth_center .container p {
+    padding-bottom: 4.5rem;
+  }
+}
+@media all and (max-width: 1024px) and (max-width: 768px) {
+  main .wrap_fourth .fourth_left img:first-child, main .wrap_fourth .fourth_right img:first-child {
+    width: 14.5rem;
+  }
+  main .wrap_fourth .fourth_left img:nth-child(2), main .wrap_fourth .fourth_right img:nth-child(2) {
+    width: 16.5rem;
+  }
+}
+@media all and (max-width: 1024px) and (max-width: 768px) and (max-width: 360px) {
+  main .wrap_fourth {
+    height: 145vh;
+  }
+  main .wrap_fourth .fourth_center {
+    font-size: 36px;
+  }
+}
 
 footer {
   background-color: black;
@@ -235,6 +328,21 @@ footer .container {
   margin: auto;
   padding: 15px 0;
 }
+@media all and (max-width: 360px) {
+  footer .container {
+    flex-wrap: wrap;
+  }
+  footer .container img {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  footer .container .chat {
+    padding-bottom: 20px;
+  }
+  footer .container .call {
+    padding-bottom: 20px;
+  }
+}
 
 @keyframes fillUp {
   0% {
@@ -243,7 +351,4 @@ footer .container {
   100% {
     background-size: 100% 125%;
   }
-}
-.is-visible {
-  opacity: 1;
 }
